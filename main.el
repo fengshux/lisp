@@ -7,7 +7,7 @@
 
 
 (defun genpass (len &optional d a A @)
-  "Password enerator"
+  "Password generator"
   (let ((pass "")
         (base "")
         (baselen 0)
