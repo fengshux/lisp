@@ -7,7 +7,7 @@
 
 
 (defun genpass (len &optional d a A @)
-  "Generator password"
+  "Password enerator"
   (let ((pass "")
         (base "")
         (baselen 0)
@@ -29,7 +29,7 @@
     pass)
   )
 
-
+;; test 
 (progn
   (generate-new-buffer "abc")
   (kill-buffer "abc")
