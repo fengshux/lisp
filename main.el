@@ -6,7 +6,7 @@
   )
 
 
-(defun genpass (len &optional d a A @)
+(defun genpass (len &optional d l u s)
   "Password generator"
   (let ((pass "")
         (base "")
@@ -16,11 +16,11 @@
         (up "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
         (spe "+-*%/!@#$%^&:<>;?.,'")
         )
-    (or @ (or A (or a  (or d (and (setq a t) (setq d t))))))
-    (and a (setq base lo))
+    (or s (or u (or l  (or d (and (setq l t) (setq d t))))))
+    (and l (setq base lo))
     (and d (setq base (concat base dig)))
-    (and A (setq base (concat base up)))
-    (and @ (setq base (concat base spe)))
+    (and u (setq base (concat base up)))
+    (and s (setq base (concat base spe)))
     (setq baselen (length base))
     (while (> len 0)
       (setq pass (concat pass (string (aref base (random baselen)))))
@@ -29,9 +29,9 @@
     pass)
   )
 
-;; test 
-(progn
-  (generate-new-buffer "abc")
-  (kill-buffer "abc")
-  )
+
+
+
+
+
 
